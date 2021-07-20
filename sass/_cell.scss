@@ -1,0 +1,83 @@
+.cell-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  border-radius: 2rem 0 0 0;
+}
+
+.cell-2 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.cell-3 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.cell-4 {
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  border-radius: 0 2rem 0 0;
+}
+
+.cell-5 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.cell-6 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.cell-7 {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.cell-8 {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.cell-9 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.cell-10 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.cell-11 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+.cell-12 {
+  grid-column: 4 / 5;
+  grid-row: 3 / 4;
+}
+
+.cell-13 {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  border-radius: 0 0 0 2rem;
+}
+
+.cell-14 {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.cell-15 {
+  grid-column: 3 / 4;
+  grid-row: 4 / 5;
+}
+
+.cell-16 {
+  grid-column: 4 / 5;
+  grid-row: 4 / 5;
+  border-radius: 0 0 2rem 0;
+}

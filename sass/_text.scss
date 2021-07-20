@@ -1,0 +1,31 @@
+.text {
+  &__time {
+    width: 70%;
+    grid-column: 6 / span 3;
+    grid-row: 1 / span 3;
+    align-self: center;
+    justify-self: center;
+    font-size: 2.5rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 0 2rem;
+    background: linear-gradient(#43e86f, #2abf52);
+    text-align: center;
+
+    &-minute {
+      font-size: 4rem;
+    }
+
+    &-second {
+      font-size: 3.7rem;
+    }
+    &-time {
+      font-size: 4rem;
+      text-align: center;
+    }
+  }
+}
+
+.transform-left {
+  transform: translateX(-0.6rem);
+}
