@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 //
 const init = function () {
   move();
-  // resetCells();
+  resetCells();
 };
 init();
 
