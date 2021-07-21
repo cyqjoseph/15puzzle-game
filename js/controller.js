@@ -8,6 +8,7 @@ btnReset.addEventListener('click', function (e) {
   e.preventDefault();
   res.forEach(e => e.classList.remove('game__win'));
   resetCells();
+  document.getElementById('moves').innerHTML = 0;
 });
 
 // LOADS HIGHSCORES ON PAGE LOAD
@@ -25,7 +26,7 @@ window.addEventListener('load', function () {
   }
 });
 
-//
+// Initialising
 const init = function () {
   move();
   resetCells();

@@ -1,20 +1,5 @@
 import { stopTime, addHighScore } from './functionality.js';
 
-const checkWin = function () {
-  const res = document.querySelectorAll('.game__cell');
-  for (let i = 0; i < res.length - 1; i++) {
-    if (Math.abs(res[i].classList.value.slice(-2)) !== +res[i].innerHTML) {
-      return;
-    }
-  }
-  res.forEach(e => e.classList.add('game__win'));
-  const totalMin = +document.getElementById('minute').innerHTML;
-  const totalSec = +document.getElementById('second').innerHTML;
-  const totalTime = +totalMin * 60 + totalSec;
-  stopTime();
-  addHighScore(totalTime);
-};
-
 const getGridElementsPosition = function (index) {
   const gridEl = document.querySelector('.game');
   // our indexes are zero-based but gridColumns are 1-based, so subtract 1
@@ -114,42 +99,69 @@ const checkCellOnRight = function () {
 
   return document.getElementsByClassName('game__cell')[index];
 };
-export const move = function () {
-  document.addEventListener('keydown', function (e) {
-    try {
-      let topCell = checkCellOnTop();
-      let bottomCell = checkCellOnBottom();
-      let leftCell = checkCellOnLeft();
-      let rightCell = checkCellOnRight();
-      let emptyCell = getEmptyCell();
-      if (e.key === 'ArrowDown') {
-        [topCell.innerHTML, emptyCell.innerHTML] = [
-          emptyCell.innerHTML,
-          topCell.innerHTML,
-        ];
-      } else if (e.key === 'ArrowUp') {
-        [bottomCell.innerHTML, emptyCell.innerHTML] = [
-          emptyCell.innerHTML,
-          bottomCell.innerHTML,
-        ];
-      } else if (e.key === 'ArrowRight') {
-        [leftCell.innerHTML, emptyCell.innerHTML] = [
-          emptyCell.innerHTML,
-          leftCell.innerHTML,
-        ];
-      } else if (e.key === 'ArrowLeft') {
-        [rightCell.innerHTML, emptyCell.innerHTML] = [
-          emptyCell.innerHTML,
-          rightCell.innerHTML,
-        ];
-      }
-      checkWin();
-    } catch (e) {
-      function stopError() {
-        return true;
-      }
+
+const settleWin = function () {
+  document.removeEventListener('keydown', keydown);
+};
+const checkWin = function () {
+  const res = document.querySelectorAll('.game__cell');
+  for (let i = 0; i < res.length - 1; i++) {
+    if (Math.abs(res[i].classList.value.slice(-2)) !== +res[i].innerHTML) {
+      return;
     }
-  });
+  }
+  res.forEach(e => e.classList.add('game__win'));
+  const totalMin = +document.getElementById('minute').innerHTML;
+  const totalSec = +document.getElementById('second').innerHTML;
+  const totalTime = +totalMin * 60 + totalSec;
+  stopTime();
+  settleWin();
+  addHighScore(totalTime);
+};
+
+let moveCounter = 0;
+const keydown = function (e) {
+  try {
+    let topCell = checkCellOnTop();
+    let bottomCell = checkCellOnBottom();
+    let leftCell = checkCellOnLeft();
+    let rightCell = checkCellOnRight();
+    let emptyCell = getEmptyCell();
+    if (e.key === 'ArrowDown') {
+      [topCell.innerHTML, emptyCell.innerHTML] = [
+        emptyCell.innerHTML,
+        topCell.innerHTML,
+      ];
+    } else if (e.key === 'ArrowUp') {
+      [bottomCell.innerHTML, emptyCell.innerHTML] = [
+        emptyCell.innerHTML,
+        bottomCell.innerHTML,
+      ];
+    } else if (e.key === 'ArrowRight') {
+      [leftCell.innerHTML, emptyCell.innerHTML] = [
+        emptyCell.innerHTML,
+        leftCell.innerHTML,
+      ];
+    } else if (e.key === 'ArrowLeft') {
+      [rightCell.innerHTML, emptyCell.innerHTML] = [
+        emptyCell.innerHTML,
+        rightCell.innerHTML,
+      ];
+    }
+    // Increase Move Count
+    moveCounter++;
+    document.getElementById('moves').innerHTML = moveCounter;
+    // Check For win after every move
+    checkWin();
+  } catch (e) {
+    function stopError() {
+      return true;
+    }
+  }
+};
+
+export const move = function () {
+  document.addEventListener('keydown', keydown);
 };
 
 // class Moves {

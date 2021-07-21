@@ -9,7 +9,7 @@
     border: 1px solid black;
     border-radius: 2rem;
     padding: 0 2rem;
-    background: linear-gradient(#43e86f, #2abf52);
+    background: linear-gradient(#d9d5d4, #e3d6d5);
     text-align: center;
 
     &-minute {
@@ -23,6 +23,20 @@
       font-size: 4rem;
       text-align: center;
     }
+  }
+
+  &__moves {
+    grid-column: 9 / span 3;
+    grid-row: 1 / span 3;
+    width: 70%;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    background-color: #e3d6d5;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 0 2rem;
+    font-size: 4rem;
   }
 }
 

@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Tourney', cursive;
   color: black;
   font-weight: 300;
   line-height: 1.6;
@@ -22,7 +22,7 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 6.25vw);
   grid-template-rows: repeat(16, 6.25vh);
-  background: linear-gradient(lightblue, rgba(#178aad, 0.9));
+  background: linear-gradient(rgb(205, 230, 238), rgba(#777e80, 0.9));
   // background-color: lightblue;
 }
 

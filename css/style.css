@@ -10,7 +10,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Tourney', cursive;
   color: black;
   font-weight: 300;
   line-height: 1.6; }
@@ -19,13 +19,13 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 6.25vw);
   grid-template-rows: repeat(16, 6.25vh);
-  background: linear-gradient(lightblue, rgba(23, 138, 173, 0.9)); }
+  background: linear-gradient(#cde6ee, rgba(119, 126, 128, 0.9)); }
 
 .hidden {
   opacity: 0; }
 
 .btn__reset {
-  grid-column: 13 /15;
+  grid-column: 13 / 16;
   grid-row: 2 / span 2;
   width: 40%;
   height: 40%;
@@ -35,10 +35,10 @@ body {
   border-radius: 4rem;
   cursor: pointer;
   font-size: 1.5rem;
-  background-color: #dbe342;
-  font-family: inherit;
-  font-size: 2.4rem;
-  font-weight: 700; }
+  background-color: #e3d6d5;
+  font-family: 'Tourney', cursive;
+  font-size: 2rem;
+  font-weight: 600; }
 
 .cell-1 {
   grid-column: 1 / 2;
@@ -127,7 +127,7 @@ body {
     text-align: center;
     border: 1px solid black;
     padding-top: 3rem;
-    background-color: #dbe342; }
+    background-color: #e3d6d5; }
 
 .game__win {
   background-color: #6dfc85;
@@ -136,7 +136,7 @@ body {
 .highscore {
   grid-column: 2 / 5;
   grid-row: 3 / 15;
-  background: linear-gradient(#43e86f, #2abf52);
+  background: linear-gradient(#d9d5d4, #e3d6d5);
   border-radius: 3rem;
   display: grid;
   grid-template-rows: repeat(13, 1fr);
@@ -172,7 +172,7 @@ body {
   border: 1px solid black;
   border-radius: 2rem;
   padding: 0 2rem;
-  background: linear-gradient(#43e86f, #2abf52);
+  background: linear-gradient(#d9d5d4, #e3d6d5);
   text-align: center; }
   .text__time-minute {
     font-size: 4rem; }
@@ -182,5 +182,31 @@ body {
     font-size: 4rem;
     text-align: center; }
 
+.text__moves {
+  grid-column: 9 / span 3;
+  grid-row: 1 / span 3;
+  width: 70%;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  background-color: #e3d6d5;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 0 2rem;
+  font-size: 4rem; }
+
 .transform-left {
   transform: translateX(-0.6rem); }
+
+.rules {
+  grid-row: 6 / 15;
+  grid-column: 13 / 16;
+  display: flex;
+  flex-direction: column; }
+  .rules__text {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Tourney', cursive; }
+    .rules__text__bigger {
+      font-size: 3.1rem;
+      border-bottom: 0.3px solid black; }
