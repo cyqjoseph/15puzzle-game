@@ -34,33 +34,3 @@ const init = function () {
   resetCells();
 };
 init();
-
-// localStorage.setItem('highscores', JSON.stringify(['2min4sec', '2min3sec'])); // Must be a list
-// const highscores = localStorage.getItem('highscores');
-// console.log(JSON.parse(highscores)); // returns an array
-
-// console.log(highscores); // returns a string
-
-////////////////////////////////////
-// APPLICATION ARCHITECTURE
-
-// class Game extends Moves {
-//   constructor() {
-//     super();
-//     // Reset Game
-//     this._resetCells();
-//     this._checkWin();
-//   }
-
-//   _resetCells() {}
-//   _checkWin() {}
-// }
-
-// const res = document.querySelectorAll('.game__cell');
-// for (let i = 0; i < res.length; i++) {
-//   if (res[i].innerHTML == '&nbsp;') {
-//     emptyCell = res[i];
-//   }
-// }
-
-// res.forEach(e => (e.style.backgroundColor = 'green'));

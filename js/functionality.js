@@ -4,8 +4,8 @@ import {
   oddRowCells,
   htmlCollection,
 } from './selector.js';
-// RESETTING THE GAME
 
+// GAME LOGIC CHECK TO SEE IF POSITION IS SOLVABLE
 const checkInversions = function (arr) {
   let cnt = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -19,13 +19,6 @@ const checkInversions = function (arr) {
   }
   return cnt;
 };
-// let arr = [13, 2, 10, 3, 1, 12, 8, 4, 5, 9, 6, 15, 14, 11, 7];
-// let arr1 = [6, 13, 7, 10, 8, 9, 11, 15, 2, 12, 5, 14, 3, 1, 4];
-// let arr2 = [3, 9, 1, 15, 14, 11, 4, 6, 13, 10, 12, 2, 7, 8, 5];
-
-// console.log(checkInversions(arr));
-// console.log(checkInversions(arr1));
-// console.log(checkInversions(arr2));
 
 const shuffleNumbers = function (arr) {
   return arr
@@ -57,10 +50,6 @@ export const timer = function () {
     second = 0;
     minute++;
     document.querySelectorAll('.text__time-minute')[0].innerHTML = minute;
-
-    // document
-    //   .querySelectorAll('.text__time-minute')
-    //   .forEach(e => e.classList.remove('hidden'));
   }
   document.getElementById('second').innerHTML = second;
   second++;
@@ -88,6 +77,7 @@ export const resetCells = function () {
   resetTime();
 };
 
+// STOP TIME ON GAME WIN
 export const stopTime = function () {
   const highestTimeoutId = setTimeout(';');
   for (let i = 0; i < highestTimeoutId; i++) {
@@ -96,6 +86,7 @@ export const stopTime = function () {
   return;
 };
 
+// CHECKS HIGHSCORES
 export const checkHighscore = function (totalTime) {
   if (!localStorage.length) localStorage.setItem('highscores', '[]');
   const highscoreList = JSON.parse(localStorage.getItem('highscores')); // returns highscorelist, an array
@@ -105,12 +96,10 @@ export const checkHighscore = function (totalTime) {
   if (highscoreList.length > 10) {
     highscoreList.pop();
   }
-  // localStorage.setItem('highscores', JSON.stringify(highscoreList)); // Must be a list
-  // highscoreList = JSON.parse(localStorage.getItem('highscores'));
-  // console.log(highscores); // returns a string
+
   return highscoreList;
 };
-
+// ADDS HIGHSCORES
 export const addHighScore = function (totalTime) {
   const highScoreHTML = document.querySelector('.highscore__scores');
   highScoreHTML.innerHTML = '';

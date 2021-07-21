@@ -1,5 +1,4 @@
 .game {
-  //   background-color: rgba(orangered, 0.5);
   grid-column: 6 / 12;
   grid-row: 4 / 14;
   font-size: 5rem;
@@ -8,8 +7,6 @@
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
-  // border: 3px solid gray;
-  // border-radius: 3rem;
   justify-content: center;
   align-content: center;
 
