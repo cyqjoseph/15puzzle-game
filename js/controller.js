@@ -8,7 +8,9 @@ btnReset.addEventListener('click', function (e) {
   e.preventDefault();
   res.forEach(e => e.classList.remove('game__win'));
   resetCells();
+
   document.getElementById('moves').innerHTML = 0;
+  move();
 });
 
 // LOADS HIGHSCORES ON PAGE LOAD

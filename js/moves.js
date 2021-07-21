@@ -117,8 +117,8 @@ const checkWin = function () {
   stopTime();
   settleWin();
   addHighScore(totalTime);
+  moveCounter = 0;
 };
-
 let moveCounter = 0;
 const keydown = function (e) {
   try {
