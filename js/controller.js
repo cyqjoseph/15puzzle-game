@@ -1,5 +1,5 @@
 'use strict';
-import { resetCells } from './functionality.js';
+import { resetCells, stopTime } from './functionality.js';
 import { move } from './moves.js';
 import { btnReset, res } from './selector.js';
 
@@ -7,6 +7,7 @@ import { btnReset, res } from './selector.js';
 btnReset.addEventListener('click', function (e) {
   e.preventDefault();
   res.forEach(e => e.classList.remove('game__win'));
+  stopTime();
   resetCells();
 
   document.getElementById('moves').innerHTML = 0;

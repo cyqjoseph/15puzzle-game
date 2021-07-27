@@ -121,6 +121,7 @@ const checkWin = function () {
   addHighScore(totalTime);
   moveCounter = 0;
 };
+
 let moveCounter = 0;
 const keydown = function (e) {
   try {
